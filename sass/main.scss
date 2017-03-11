@@ -1,0 +1,103 @@
+$grey: #E6E8E6;
+@mixin size($w: 100%, $h: 100%) {
+    width: $w;
+    height: $h;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #54525C;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+ .camera, .button , .flash, .band, .lens {
+     position: absolute;
+ }
+
+.button {
+    @include size(5vmin, 3vmin);
+    background: #F25C54;
+    top: -16vmin;
+    left: -23vmin;
+    border-radius: 0.5vmin;
+}
+
+.camera {
+    @include size(50vmin, 30vmin);
+    border-radius: 2vmin;
+    box-shadow: 1vmin 1vmin 0 0 rgba(#000,0.2);
+    background-color: $grey;
+
+    .flash {
+        top: 2vmin;
+
+        &:before, &:after {
+            position: absolute;
+            content: '';
+        }
+
+        &:before {
+            @include size(3vmin, 3vmin);
+            background: #ADE1E5;
+            left: 44vmin;
+            border-radius: 100%;
+        }
+
+        &:after{
+            @include size(1vmin, 1vmin);
+            background: #FFF;
+            top: 13vmin;
+            border-radius: 100%;
+            left: 23vmin;
+            opacity: 0.6;
+        }
+    }
+
+    .band {
+        top: 50%;
+        background: #E88873;
+        @include size(50vmin, 15vmin);
+        margin-top: -8vmin;
+    }
+
+    .lens {
+        @include size(20vmin, 20vmin);
+        border-radius: 100%;
+        background: radial-gradient(#000 0%, #000 20%, #383838 0%, #383838 40%, #4B4B4B 0%, #4B4B4B 50%, #3A3A3A 0%, #3A3A3A 60%, $grey 0%, $grey 100%);
+        left: 50%;
+        margin-top: -10vmin;
+        top: 50%;
+        margin-left: -10.5vmin;
+
+        &:before, &:after {
+            position: absolute;
+            content: '';
+        }
+        &:before {
+            @include size(14vmin, 7vmin);
+            border-radius: 100%;
+            border-bottom: 7vmin solid rgba(#FFF, 0.2);
+            top: 3vmin;
+            left: 3vmin;
+            transform: rotate(-50deg);
+        }
+        &:after {
+            @include size(1.5vmin, 1.5vmin);
+            border-radius: 100%;
+            background: #fff;
+            opacity: 0.8;
+            top: 8vmin;
+            left: 10vmin;
+        }
+    }
+}
