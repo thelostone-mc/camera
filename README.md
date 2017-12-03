@@ -1,2 +1,2 @@
 # camera
-[Camera Demo](https://adityaanandmc.github.io/camera/)
+[Camera Demo](https://thelostone-mc.github.io/camera/)
